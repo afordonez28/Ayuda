@@ -13,8 +13,8 @@
 }
 
 /* Fuente y color base retro en toda la web */
-body, .container, .game-form, .card, .info-card, .stat-card, .section, .section-title,
-.stats-container, .gallery-item, .actions-bar, .developer-role, .developer-info, .developer-section {
+body, .container, .game-form, .card, .stat-card, .section, .section-title,
+.stats-container, .gallery-item, .actions-bar {
     color: #161616 !important;
     font-family: 'Press Start 2P', 'VT323', monospace, cursive, Arial, sans-serif;
     background: var(--dark);
@@ -186,4 +186,13 @@ nav.main-nav a:hover {
 .white-text {
     color: #fff !important;
     text-shadow: 1px 1px 4px #24004699;
+}
+
+.developer-section .developer-info {
+    color: white !important;
+    text-shadow: 1px 1px 4px #24004699;
+}
+
+.white-text {
+    color: white !important;
 }
