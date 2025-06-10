@@ -16,15 +16,46 @@
         <a class="nav-btn" href="/about">Desarrollador</a>
     </nav>
 
+    <!-- Apartado de búsqueda global -->
+    <section class="search-section">
+        <form id="globalSearchForm" class="search-form">
+            <input type="text" id="searchInput" placeholder="Buscar por nombre, característica o ID..." autocomplete="off">
+            <select id="searchType">
+                <option value="players">Jugadores</option>
+                <option value="enemies">Enemigos</option>
+            </select>
+            <button type="submit" class="btn-primary">Buscar</button>
+        </form>
+        <div id="searchResults" class="search-results"></div>
+    </section>
+
     <main class="contenedor-principal container">
         {% block content %}{% endblock %}
     </main>
 
+    <!-- Pie de página extendido -->
     <footer class="main-footer">
-        <p>&copy; 2025 Videojuego 2D. Desarrollado por Andrés Felipe Ordóñez Carrasco</p>
+        <div class="footer-sections">
+            <div class="footer-block" id="footer-planeacion">
+                <h4>Fase de Planeación</h4>
+                <ul id="footerPlaneacionList"></ul>
+            </div>
+            <div class="footer-block" id="footer-diseno">
+                <h4>Fase de Diseño</h4>
+                <ul id="footerDisenoList"></ul>
+            </div>
+            <div class="footer-block" id="footer-objetivo">
+                <h4>Objetivo</h4>
+                <p id="footerObjetivoText"></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Videojuego 2D. Desarrollado por Andrés Felipe Ordóñez Carrasco</p>
+        </div>
     </footer>
 
     <script src="/static/js/utils.js" type="module"></script>
+    <script src="/static/js/search.js" type="module"></script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>
