@@ -7,22 +7,18 @@
     <link rel="stylesheet" href="/static/css/styles.css">
     {% block extra_css %}{% endblock %}
 </head>
-<body>
-    <nav class="main-nav">
-        <ul>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/players">Jugadores</a></li>
-            <li><a href="/enemies">Enemigos</a></li>
-            <li><a href="/stats">Estadísticas</a></li>
-            <li><a href="/about">Desarrollador</a></li>
-        </ul>
+<body class="fondo">
+    <nav class="nav-rpg">
+        <a class="nav-btn" href="/">Inicio</a>
+        <a class="nav-btn" href="/players">Jugadores</a>
+        <a class="nav-btn" href="/enemies">Enemigos</a>
+        <a class="nav-btn" href="/stats">Estadísticas</a>
+        <a class="nav-btn" href="/about">Desarrollador</a>
     </nav>
 
-    <!-- Aquí se aplica la clase que pone letra blanca -->
-    <main class="container white-text">
+    <main class="contenedor-principal container">
         {% block content %}{% endblock %}
     </main>
-
 
     <footer class="main-footer">
         <p>&copy; 2025 Videojuego 2D. Desarrollado por Andrés Felipe Ordóñez Carrasco</p>

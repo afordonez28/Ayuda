@@ -1,10 +1,11 @@
-from fastapi import FastAPI, Request, HTTPException, Body
+from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List
+import os
 import uvicorn
 
 app = FastAPI()
@@ -42,11 +43,9 @@ class Player(BaseModel):
     hit_speed: int
     image: str
 
-# In-memory DB
 enemies_db: List[Enemy] = []
 players_db: List[Player] = []
 
-# Histórico de eliminados
 deleted_enemies: List[Enemy] = []
 deleted_players: List[Player] = []
 
@@ -150,4 +149,5 @@ async def http_exception_handler(request, exc):
     )
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
